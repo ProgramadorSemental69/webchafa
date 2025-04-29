@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Librairie LeNoir</title>
+  <link rel="stylesheet" href="typecss.css">
+  <style>
+    body {
+      background-color: var(--steam-dark-bg);
+      color: var(--steam-dark-text);
+      font-family: 'Crimson Text', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 30px;
+      margin: 0;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #e0d8c3;
+      margin-bottom: 30px;
+    }
+
+    .video-contenedor {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .gif-columna {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .gif-columna img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    video {
+      width: 50vw;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    }
+
+    .volver {
+      margin-top: 25px;
+    }
+
+    .volver a {
+      color: #e0d8c3;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .volver a:hover {
+      color: #c9b37e;
+      text-decoration: underline;
+    }
+
+    /* NUEVO: disposición móvil */
+    .video-contenedor-movil {
+      display: none;
+    }
+
+    .fila-gifs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .fila-gifs img {
+      width: 130px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+@media (max-width: 768px) {
+  .video-contenedor {
+    display: none;
+  }
+
+  .video-contenedor-movil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-contenedor-movil video {
+    width: 95vw;
+    max-width: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    margin: 15px 0;
+  }
+
+  .fila-gifs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .fila-gifs img {
+    width: 45vw;
+    max-width: 140px;
+    height: auto;
+    border-radius: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <h1 class="titulo-libro"></h1>
+
+  <!-- VISTA DESKTOP -->
+  <div class="video-contenedor">
+    <div class="gif-columna">
+      <img src="https://media1.tenor.com/m/qfRx-LWQbhUAAAAd/jumpforce.gif" alt="Gif 1">
+      <img src="https://media.tenor.com/CizjPak3OXsAAAAj/soyjak.gif" alt="Gif 2">
+    </div>
+
+    <video controls autoplay muted loop>
+      <source src="https://video.twimg.com/ext_tw_video/1869465813750538240/pu/vid/avc1/1058x720/FVGl7ECEQDMrtTI3.mp4" type="video/mp4">
+    </video>
+
+    <div class="gif-columna">
+      <img src="https://media1.tenor.com/m/b_ElccO6WBgAAAAd/soyjak-soyjak-dancing.gif" alt="Gif 3">
+      <img src="https://media1.tenor.com/m/K0gcpgxNkdcAAAAd/nice-person.gif" alt="Gif 4">
+    </div>
+  </div>
+
+  <!-- VISTA MÓVIL -->
+  <div class="video-contenedor-movil">
+    <div class="fila-gifs">
+      <img src="https://media1.tenor.com/m/qfRx-LWQbhUAAAAd/jumpforce.gif" alt="Gif 1">
+      <img src="https://media.tenor.com/CizjPak3OXsAAAAj/soyjak.gif" alt="Gif 2">
+    </div>
+
+    <video controls autoplay muted loop>
+      <source src="https://video.twimg.com/ext_tw_video/1869465813750538240/pu/vid/avc1/1058x720/FVGl7ECEQDMrtTI3.mp4" type="video/mp4">
+    </video>
+
+    <div class="fila-gifs">
+      <img src="https://media1.tenor.com/m/b_ElccO6WBgAAAAd/soyjak-soyjak-dancing.gif" alt="Gif 3">
+      <img src="https://media1.tenor.com/m/K0gcpgxNkdcAAAAd/nice-person.gif" alt="Gif 4">
+    </div>
+  </div>
+
+  <div class="volver">
+    <a href="index.html">← Volver</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librairie LeNoir</title>
+    <link rel="stylesheet" href="typecss.css">
+    <style>
+        #preview-panel {
+            position: absolute;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        #preview-panel.show {
+            display: block;
+        }
+        #preview-images img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        /* MODO RESPONSIVE */
+        @media (max-width: 480px) {
+            .Estanteria {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                padding: 10px;
+                margin: 20px auto;
+                justify-content: center;
+            }
+            .libro {
+                width: 100%;
+                max-width: 140px;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            .libro img {
+                max-height: 180px;
+                object-fit: cover;
+                width: 100%;
+            }
+            .libro p {
+                font-size: 0.9rem;
+                margin-top: 5px;
+            }
+            .video-boton a {
+                font-size: 1rem;
+                padding: 10px 20px;
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="librairie-lenoir" id="pagina">
+        <header class="cabecera">
+            <div class="guia-usuario">
+                <a href="guia.html">
+                    <button id="boton-guia-usuario">
+                        Guía de Usuario
+                    </button>
+                </a>
+            </div>
+            <div class="accesibilidad">
+                <button id="toggle-accesibilidad" class="accesibilidad-toggle">
+                    Accesibilidad
+                </button>
+                <div id="accesibilidad-panel" class="accesibilidad-panel" style="display: none;">
+                    <label for="filtro-color">Modo de color:</label>
+                    <select id="filtro-color">
+                        <option value="normal">Normal</option>
+                        <option value="protanopia">Protanopía</option>
+                        <option value="deuteranopia">Deuteranopía</option>
+                    </select>
+                </div>
+            </div>
+            <h1>Le Librairie LeNoir</h1>
+            <p class="subtitulo">Livres rares et précieux</p>
+        </header>
+
+        <div class="Estanteria">
+            <a href="libro1.html">
+                <div class="libro" onmouseover="showPreview(event, 0)" onmouseout="hidePreview()">
+                    <img src="https://m.media-amazon.com/images/I/91TvVQS7loL._SL1500_.jpg" alt="Portada 1">
+                    <p>Cien años de soledad</p>
+                </div>
+            </a>
+            <a href="libro2.html">
+                <div class="libro" onmouseover="showPreview(event, 1)" onmouseout="hidePreview()">
+                    <img src="https://m.media-amazon.com/images/I/81dxFCnAp0L._SL1500_.jpg" alt="Portada 2">
+                    <p>Harry Potter y
+                    la piedra filosofal</p>
+                </div>
+            </a>
+            <a href="libro3.html">
+                <div class="libro" onmouseover="showPreview(event, 2)" onmouseout="hidePreview()">
+                    <img src="https://m.media-amazon.com/images/I/61YUYPYlkzL._SL1360_.jpg" alt="Portada 3">
+                    <p>La Odisea</p>
+                </div>
+            </a>
+            <a href="libro4.html">
+                <div class="libro" onmouseover="showPreview(event, 3)" onmouseout="hidePreview()">
+                    <img src="https://cdn.somoskudasai.com/image/ed60d71f6b30facccf8b8a1180ca72cd/762x1080/E73qQZK.webp" alt="Portada 4">
+                    <p>Bakemonogatari</p>
+                </div>
+            </a>
+            <a href="libro5.html">
+                <div class="libro" onmouseover="showPreview(event, 4)" onmouseout="hidePreview()">
+                    <img src="https://m.media-amazon.com/images/I/71oVTrHAylL._SL1178_.jpg" alt="Portada 5">
+                    <p>El Señor de los Anilos</p>
+                </div>
+            </a>
+            <a href="libro6.html">
+                <div class="libro" onmouseover="showPreview(event, 5)" onmouseout="hidePreview()">
+                    <img src="https://m.media-amazon.com/images/I/71VrtQU9VBL._SL1500_.jpg" alt="Portada 6">
+                    <p>Los Juegos del Hambre</p>
+                </div>
+            </a>
+            <a href="libro7.html">
+                <div class="libro" onmouseover="showPreview(event, 6)" onmouseout="hidePreview()">
+                    <img src="https://m.media-amazon.com/images/I/71PR0C4XNjL._SL1500_.jpg" alt="Portada 7">
+                    <p>El Codigo Da Vinci</p>
+                </div>
+            </a>
+            <a href="libro8.html">
+                <div class="libro" onmouseover="showPreview(event, 7)" onmouseout="hidePreview()">
+                    <img src="https://m.media-amazon.com/images/I/71b+8DFF3XL._SL1432_.jpg" alt="Portada 8">
+                    <p>Alicia en el pais de las maravillas</p>
+                </div>
+            </a>
+            <a href="libro9.html">
+                <div class="libro" onmouseover="showPreview(event, 8)" onmouseout="hidePreview()">
+                    <img src="https://m.media-amazon.com/images/I/91jHOlKEPwL._SL1500_.jpg" alt="Portada 9">
+                    <p>1984</p>
+                </div>
+            </a>
+            <a href="libro10.html">
+                <div class="libro" onmouseover="showPreview(event, 9)" onmouseout="hidePreview()">
+                    <img src="https://m.media-amazon.com/images/I/811kjwhnjcS._SL1500_.jpg" alt="Portada 10">
+                    <p>El Principito</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div id="preview-panel">
+        <h3 id="preview-title"></h3>
+        <div id="preview-images"></div>
+    </div>
+
+    <div class="video-boton">
+        <a href="video.html">BOTON ULTRA SECRETO</a>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <filter id="protanopia">
+        <feColorMatrix type="matrix"
+          values="0.567,0.433,0,0,0
+                  0.558,0.442,0,0,0
+                  0,0.242,0.758,0,0
+                  0,0,0,1,0" />
+      </filter>
+      <filter id="deuteranopia">
+        <feColorMatrix type="matrix"
+          values="0.625,0.375,0,0,0
+                  0.7,0.3,0,0,0
+                  0,0.3,0.7,0,0
+                  0,0,0,1,0" />
+      </filter>
+
+    </svg>
+    
+
+    <script src="chanchito javascriptero.js"></script>
+</body>
+</html>
